@@ -42,4 +42,24 @@ def define_custom_seconds():
     if args.circular:
         mouse_direction_delta = 1
 
-    
+    check_if_is_both_enabled = 'both' == mode
+    check_if_keyboard_enabled = 'keyboard' == mode or check_if_is_both_enabled
+    chec_if_mouse_enabled = 'mouse' == mode or check_if_is_both_enabled or mode is None
+
+    print('------------------ S T A R T I N G ------------------ ')
+    if check_if_keyboard_enabled:
+        press_shift_key = True
+        print(get_actual_time(), "Keyboard is enabled")
+
+    if chec_if_mouse_enabled:
+        move_mouse = True
+        print(get_actual_time(), "Mouse is enabled, moving every: ", pixels_to_move, "pixels",
+              '(circulary)' if mouse_direction_delta == 1 else '')
+
+    print(get_actual_time(), "Running every: ", str(moveMouseEveySeconds), "seconds")
+    print("------------------ E N D I N G ------------------")
+
+
+def get_actual_time():
+    now = datetime.now()
+    return now.strftime("%H:%M:%S")
