@@ -13,7 +13,7 @@ needMoveMousePointer = False
 isShiftKeyPressed = False
 pixelsQuantityToMove = 1
 principalMousePointerDirection = 0
-secondsToMoveMousePointer = 100
+secondsToMoveMousePointer = 1
 mouse_direction = 0
 
 
@@ -117,16 +117,12 @@ lastSavePosition = (0, 0)
 while 1:
     currentPosition = mouse.position
     is_user_away = currentPosition == lastSavePosition
-
     if is_user_away:
         execute_keep_awake_action()
         currentPosition = mouse.position
-
     if not is_user_away:
         print('Actual position', mouse.position)
         print(get_now_timestamp(), 'User activity detected')
-
     lastSavePosition = currentPosition
-
-    print('----------')
     time.sleep(secondsToMoveMousePointer)
+    print('----------- Next iteration -----------')
