@@ -13,7 +13,7 @@ needMoveMousePointer = False
 isShiftKeyPressed = False
 pixelsQuantityToMove = 1
 principalMousePointerDirection = 0
-secondsToMoveMousePointer = 1
+secondsToMoveMousePointer = 100
 mouse_direction = 0
 
 
